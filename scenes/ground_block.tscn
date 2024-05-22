@@ -15,6 +15,6 @@ region_enabled = true
 region_rect = Rect2(146, 1, 154, 55)
 
 [node name="GroundBlockCol" type="CollisionShape2D" parent="."]
-position = Vector2(4, 0)
+position = Vector2(5.48363e-06, 0)
 scale = Vector2(0.72, 0.731428)
 shape = SubResource("RectangleShape2D_actif")

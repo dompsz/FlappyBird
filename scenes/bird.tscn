@@ -44,7 +44,7 @@ script = ExtResource("1_oxn1s")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ius86")
 autoplay = "default"
-frame_progress = 0.23917
+frame_progress = 0.272836
 
 [node name="BirdColl" type="CollisionShape2D" parent="."]
 light_mask = 31
