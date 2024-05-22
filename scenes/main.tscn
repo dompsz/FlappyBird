@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwoi3ra30rcua"]
+
+[ext_resource type="Texture2D" uid="uid://b0lwp4axqekrm" path="res://assets/Sprite_sheet.png" id="1_3ji8j"]
+[ext_resource type="PackedScene" uid="uid://ca8xlj67orbg2" path="res://scenes/ground_block.tscn" id="2_wchj1"]
+[ext_resource type="PackedScene" uid="uid://l8vmemjptig5" path="res://scenes/bird.tscn" id="3_i80re"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_actif"]
+size = Vector2(400, 9)
+
+[node name="Main" type="Node2D"]
+
+[node name="MapBoundries" type="Node2D" parent="."]
+
+[node name="Top" type="CollisionShape2D" parent="MapBoundries"]
+position = Vector2(200, -4.5)
+shape = SubResource("RectangleShape2D_actif")
+one_way_collision = true
+
+[node name="Background" type="Sprite2D" parent="."]
+show_behind_parent = true
+light_mask = 0
+texture_filter = 1
+position = Vector2(200, 350)
+scale = Vector2(2.77778, 2.73438)
+texture = ExtResource("1_3ji8j")
+region_enabled = true
+region_rect = Rect2(0, 0, 144, 256)
+
+[node name="GroundBlock" parent="." instance=ExtResource("2_wchj1")]
+position = Vector2(210, 728)
+scale = Vector2(3.00649, 2.09091)
+
+[node name="Bird" parent="." instance=ExtResource("3_i80re")]
+position = Vector2(200, 200)
+scale = Vector2(2, 2)

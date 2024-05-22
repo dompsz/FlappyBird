@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca8xlj67orbg2"]
+
+[ext_resource type="Texture2D" uid="uid://b0lwp4axqekrm" path="res://assets/Sprite_sheet.png" id="1_ucvg7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_actif"]
+size = Vector2(427.778, 151)
+
+[node name="GroundBlock" type="StaticBody2D"]
+
+[node name="GroundBlockSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_ucvg7")
+region_enabled = true
+region_rect = Rect2(146, 1, 154, 55)
+
+[node name="GroundBlockCol" type="CollisionShape2D" parent="."]
+position = Vector2(4, 0)
+scale = Vector2(0.72, 0.731428)
+shape = SubResource("RectangleShape2D_actif")

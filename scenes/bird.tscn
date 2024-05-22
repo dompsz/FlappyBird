@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://l8vmemjptig5"]
+
+[ext_resource type="Texture2D" uid="uid://b0lwp4axqekrm" path="res://assets/Sprite_sheet.png" id="1_b6tnt"]
+[ext_resource type="Script" path="res://scripts/bird.gd" id="1_oxn1s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_par8y"]
+atlas = ExtResource("1_b6tnt")
+region = Rect2(262, 60, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxbuc"]
+atlas = ExtResource("1_b6tnt")
+region = Rect2(262, 86, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07clc"]
+atlas = ExtResource("1_b6tnt")
+region = Rect2(221, 120, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ius86"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_par8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxbuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07clc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kckbg"]
+radius = 5.0
+height = 14.0
+
+[node name="Bird" type="CharacterBody2D"]
+top_level = true
+script = ExtResource("1_oxn1s")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ius86")
+autoplay = "default"
+frame_progress = 0.23917
+
+[node name="BirdColl" type="CollisionShape2D" parent="."]
+light_mask = 31
+visibility_layer = 31
+rotation = -1.57163
+shape = SubResource("CapsuleShape2D_kckbg")
