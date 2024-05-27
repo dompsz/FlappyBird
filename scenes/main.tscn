@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwoi3ra30rcua"]
+[gd_scene load_steps=7 format=3 uid="uid://cwoi3ra30rcua"]
 
 [ext_resource type="Script" path="res://scripts/GameController.gd" id="1_0gaxl"]
 [ext_resource type="Texture2D" uid="uid://b0lwp4axqekrm" path="res://assets/Sprite_sheet.png" id="1_3ji8j"]
 [ext_resource type="PackedScene" uid="uid://ca8xlj67orbg2" path="res://scenes/ground_block.tscn" id="2_wchj1"]
 [ext_resource type="PackedScene" uid="uid://l8vmemjptig5" path="res://scenes/bird.tscn" id="3_i80re"]
 [ext_resource type="PackedScene" uid="uid://ckowjun6oh1a6" path="res://scenes/background.tscn" id="3_pnlfm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sw7js"]
+size = Vector2(401, 10)
 
 [node name="Main" type="Node2D"]
 process_mode = 3
@@ -22,17 +25,9 @@ wait_time = 2.0
 one_shot = true
 autostart = true
 
-[node name="StaticMapElements" type="Node2D" parent="."]
-
-[node name="GroundBlock" parent="StaticMapElements" instance=ExtResource("2_wchj1")]
+[node name="GroundBlock" parent="." instance=ExtResource("2_wchj1")]
 z_index = 1
-position = Vector2(201, 712)
-scale = Vector2(1.52614, 1.47114)
-
-[node name="GroundBlock2" parent="StaticMapElements" instance=ExtResource("2_wchj1")]
-visible = false
-position = Vector2(200, -3)
-scale = Vector2(1.4, 0.05)
+position = Vector2(200, 710)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -113,3 +108,18 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 21
 text = "High Score: 0"
 horizontal_alignment = 1
+
+[node name="StaticMapElements" type="Node2D" parent="."]
+
+[node name="TopBorder" type="StaticBody2D" parent="StaticMapElements"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticMapElements/TopBorder"]
+position = Vector2(199.5, -5)
+shape = SubResource("RectangleShape2D_sw7js")
+
+[node name="BotBorder" type="StaticBody2D" parent="StaticMapElements"]
+position = Vector2(0, 648.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticMapElements/BotBorder"]
+position = Vector2(199.5, -5)
+shape = SubResource("RectangleShape2D_sw7js")

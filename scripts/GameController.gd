@@ -2,6 +2,7 @@ extends Node2D
 @onready var top = load("res://scenes/top_pipe.tscn")
 @onready var bot = load("res://scenes/bottom_pipe.tscn")
 @onready var bg = load("res://scenes/background.tscn")
+@onready var gb = load("res://scenes/ground_block.tscn")
 @onready var timer = $PipeSpawnTimer
 @onready var score_label = $UI/ScoreLabel
 @onready var bird = $Bird
@@ -45,7 +46,7 @@ func death_pause():
 		save_data.high_score = score
 		high_score_label.text = "High Score: " + str(score)
 		save_data.save()
-		save_data.high_score
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	
@@ -118,3 +119,8 @@ func spawn_bg():
 	b.position.x = 599
 	b.position.y = 350
 	add_child(b)
+	
+	var g = gb.instantiate()
+	g.position.x = 599
+	g.position.y = 710
+	add_child(g)

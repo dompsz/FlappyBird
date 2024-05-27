@@ -1,24 +1,20 @@
 [gd_scene load_steps=3 format=3 uid="uid://ca8xlj67orbg2"]
 
+[ext_resource type="Script" path="res://scripts/Background.gd" id="1_6mrqi"]
 [ext_resource type="Texture2D" uid="uid://b0lwp4axqekrm" path="res://assets/Sprite_sheet.png" id="1_ucvg7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_actif"]
-size = Vector2(427.778, 151)
-
-[node name="GroundBlock" type="StaticBody2D"]
+[node name="GroundBlockSprite" type="Sprite2D"]
 process_mode = 1
 light_mask = 0
-
-[node name="GroundBlockSprite" type="Sprite2D" parent="."]
-light_mask = 0
+z_index = 2
 texture_filter = 1
-scale = Vector2(2, 2)
+scale = Vector2(2.6, 2.6)
 texture = ExtResource("1_ucvg7")
 region_enabled = true
 region_rect = Rect2(146, 1, 154, 55)
+script = ExtResource("1_6mrqi")
 
-[node name="GroundBlockCol" type="CollisionShape2D" parent="."]
-light_mask = 0
-position = Vector2(5.48363e-06, 0)
-scale = Vector2(0.72, 0.731428)
-shape = SubResource("RectangleShape2D_actif")
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+process_mode = 1
+position = Vector2(0.180003, 0.576931)
+scale = Vector2(9.80999, 3.36538)
