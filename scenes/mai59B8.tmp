@@ -11,10 +11,12 @@ process_mode = 3
 script = ExtResource("1_0gaxl")
 
 [node name="Bird" parent="." instance=ExtResource("3_i80re")]
+process_mode = 1
 position = Vector2(100, 300)
 scale = Vector2(2, 2)
 
 [node name="Background" parent="." instance=ExtResource("3_pnlfm")]
+process_mode = 1
 
 [node name="PipeSpawnTimer" type="Timer" parent="."]
 process_mode = 1
@@ -45,24 +47,23 @@ top_level = true
 light_mask = 0
 texture_filter = 1
 layout_mode = 0
-offset_left = 9.0
-offset_top = 36.0
-offset_right = 145.0
-offset_bottom = 72.0
+offset_left = 7.0
+offset_top = 16.0
+offset_right = 188.0
+offset_bottom = 52.0
 theme_override_font_sizes/font_size = 26
-text = "R - Restart"
+text = "R - Restart key"
 
 [node name="ScoreLabel" type="Label" parent="UI"]
 top_level = true
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = 10
 anchor_right = 1.0
-offset_left = -40.0
-offset_top = 38.0
-offset_bottom = 78.0
-grow_horizontal = 0
+offset_left = 360.0
+offset_top = 14.0
+offset_bottom = 54.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 26
 text = "0"
 horizontal_alignment = 1
@@ -81,35 +82,8 @@ region_rect = Rect2(358, 0, 95, 7)
 [node name="Score" type="Sprite2D" parent="UI"]
 top_level = true
 texture_filter = 1
-position = Vector2(313, 60)
+position = Vector2(311.513, 34.875)
 scale = Vector2(2.44934, 2.94231)
 texture = ExtResource("1_3ji8j")
 region_enabled = true
 region_rect = Rect2(244, 174, 40, 13)
-
-[node name="GameOverSprite" type="Sprite2D" parent="UI"]
-visible = false
-top_level = true
-z_index = 1
-texture_filter = 1
-position = Vector2(200, 350)
-scale = Vector2(3, 3)
-texture = ExtResource("1_3ji8j")
-region_enabled = true
-region_rect = Rect2(146, 199, 94, 19)
-
-[node name="HighScoreLabel" type="Label" parent="UI"]
-z_index = 2
-texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 4.825
-anchor_right = 4.825
-offset_left = -192.0
-offset_top = 4.0
-offset_right = 207.0
-offset_bottom = 34.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 21
-text = "High Score: 0"
-horizontal_alignment = 1

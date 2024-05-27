@@ -6,8 +6,11 @@
 size = Vector2(427.778, 151)
 
 [node name="GroundBlock" type="StaticBody2D"]
+process_mode = 1
+light_mask = 0
 
 [node name="GroundBlockSprite" type="Sprite2D" parent="."]
+light_mask = 0
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("1_ucvg7")
@@ -15,6 +18,7 @@ region_enabled = true
 region_rect = Rect2(146, 1, 154, 55)
 
 [node name="GroundBlockCol" type="CollisionShape2D" parent="."]
+light_mask = 0
 position = Vector2(5.48363e-06, 0)
 scale = Vector2(0.72, 0.731428)
 shape = SubResource("RectangleShape2D_actif")

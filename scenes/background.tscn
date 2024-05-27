@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckowjun6oh1a6"]
+
+[ext_resource type="Texture2D" uid="uid://b0lwp4axqekrm" path="res://assets/Sprite_sheet.png" id="1_4rkyk"]
+[ext_resource type="Script" path="res://scripts/Background.gd" id="2_0kvvo"]
+
+[node name="Background" type="Sprite2D"]
+process_mode = 1
+light_mask = 0
+z_index = -1
+texture_filter = 1
+position = Vector2(200, 350)
+scale = Vector2(2.77778, 2.73438)
+texture = ExtResource("1_4rkyk")
+region_enabled = true
+region_rect = Rect2(0, 0, 144, 256)
+script = ExtResource("2_0kvvo")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+process_mode = 1
+position = Vector2(0.180003, 0.18285)
+scale = Vector2(9.80999, 15.3051)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

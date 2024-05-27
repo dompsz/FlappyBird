@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsdiccfn207ba"]
+
+[ext_resource type="Script" path="res://scripts/pipes.gd" id="1_qj8v2"]
+[ext_resource type="Texture2D" uid="uid://b0lwp4axqekrm" path="res://assets/Sprite_sheet.png" id="1_u32ho"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_loitk"]
+size = Vector2(22, 47.4286)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqki0"]
+size = Vector2(26, 134.214)
+
+[node name="TopPipe" type="Node2D"]
+process_mode = 1
+light_mask = 0
+scale = Vector2(3, 3.5)
+script = ExtResource("1_qj8v2")
+
+[node name="PipeSprite" type="Sprite2D" parent="."]
+light_mask = 0
+texture_filter = 1
+position = Vector2(0, -67.5)
+texture = ExtResource("1_u32ho")
+region_enabled = true
+region_rect = Rect2(302, 0, 26, 135)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-0.333332, -68.1429)
+scale = Vector2(3.1, 6.75714)
+
+[node name="ScoreArea" type="Area2D" parent="."]
+
+[node name="ScoreShape" type="CollisionShape2D" parent="ScoreArea"]
+position = Vector2(1, 23.1429)
+shape = SubResource("RectangleShape2D_loitk")
+
+[node name="CollisionArea" type="Area2D" parent="." groups=["pipes"]]
+
+[node name="Collider" type="CollisionShape2D" parent="CollisionArea"]
+light_mask = 0
+position = Vector2(0, -68)
+shape = SubResource("RectangleShape2D_yqki0")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="area_exited" from="ScoreArea" to="." method="_on_score_counter_area_exited"]
