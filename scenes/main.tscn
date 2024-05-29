@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b0lwp4axqekrm" path="res://assets/Sprite_sheet.png" id="1_3ji8j"]
 [ext_resource type="PackedScene" uid="uid://ca8xlj67orbg2" path="res://scenes/ground_block.tscn" id="2_wchj1"]
 [ext_resource type="PackedScene" uid="uid://l8vmemjptig5" path="res://scenes/bird.tscn" id="3_i80re"]
-[ext_resource type="PackedScene" uid="uid://ckowjun6oh1a6" path="res://scenes/background.tscn" id="3_pnlfm"]
+[ext_resource type="PackedScene" uid="uid://cbtjdmq4gb7cf" path="res://scenes/parallaxBackground.tscn" id="5_2hgy8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sw7js"]
 size = Vector2(401, 10)
@@ -17,7 +17,7 @@ script = ExtResource("1_0gaxl")
 position = Vector2(100, 300)
 scale = Vector2(2, 2)
 
-[node name="Background" parent="." instance=ExtResource("3_pnlfm")]
+[node name="ParallaxBackground" parent="." instance=ExtResource("5_2hgy8")]
 
 [node name="PipeSpawnTimer" type="Timer" parent="."]
 process_mode = 1
