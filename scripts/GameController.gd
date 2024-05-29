@@ -1,7 +1,6 @@
 extends Node2D
 @onready var top = load("res://scenes/top_pipe.tscn")
 @onready var bot = load("res://scenes/bottom_pipe.tscn")
-@onready var bg = load("res://scenes/background.tscn")
 @onready var gb = load("res://scenes/ground_block.tscn")
 @onready var timer = $PipeSpawnTimer
 @onready var score_label = $UI/ScoreLabel
@@ -115,11 +114,6 @@ func add_score():
 
 #spawn background
 func spawn_bg():
-	var b = bg.instantiate()
-	b.position.x = 599
-	b.position.y = 350
-	add_child(b)
-	
 	var g = gb.instantiate()
 	g.position.x = 599
 	g.position.y = 710
